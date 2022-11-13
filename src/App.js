@@ -1,7 +1,13 @@
 import './App.css';
+import React from "react"
 
 function App() {
-  return null;
+    return ( 
+        <div className="App">
+            <div className="AppGlass">        
+            </div>    
+        </div>
+    );
 }
 
 export default App;
