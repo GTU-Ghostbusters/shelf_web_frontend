@@ -1,7 +1,15 @@
 import './App.css';
+import React from "react"
+import Sidebar from './Components/Sidebar/Sidebar';
 
 function App() {
-  return null;
+    return ( 
+        <div className="App">
+            <div className="AppGlass"> 
+                <Sidebar/>
+            </div>    
+        </div>
+    );
 }
 
 export default App;
