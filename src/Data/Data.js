@@ -3,40 +3,30 @@ import {
     UilEstate,
     UilClipboardAlt,
     UilUsersAlt,
-    UilPackage,
-    UilChart,
     UilSignOutAlt,
   } from "@iconscout/react-unicons";
 
   export const SidebarData = [
   {
     icon: UilEstate,
-    heading: "Go account page",
+    heading: "Account page",
   },
   {
     icon: UilEstate,
-    heading: "Go home page",
+    heading: "Home page",
   },
   {
     icon: UilClipboardAlt,
-    heading: "Add book",
+    heading: "Books",
+  },
+
+  {
+    icon: UilUsersAlt,
+    heading: "Members",
   },
   {
     icon: UilClipboardAlt,
-    heading: "Remove book",
-  },{
-    icon: UilClipboardAlt,
-    heading: "List all books",
-  },
-  {
-    icon: UilUsersAlt,
-    heading: "Add member",
-  },{
-    icon: UilUsersAlt,
-    heading: "Remove member",
-  },{
-    icon: UilUsersAlt,
-    heading: "Edit member",
+    heading: "Reports",
   },
   {
     icon: UilSignOutAlt,

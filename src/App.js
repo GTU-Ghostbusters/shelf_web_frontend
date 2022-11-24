@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState } from "react"
 import Sidebar from './Components/Sidebar/Sidebar';
 import HomePage from './Components/HomePage/HomePage';
+import AccountPage from './Components/AccountPage/AccountPage';
 
 function App() {
     
@@ -12,6 +13,8 @@ function App() {
                 <Sidebar setSelected2={setSelected2}/>
                 {(() => {
                     switch (selected2) {
+                    case 0:
+                        return <AccountPage/>
                     case 1:
                         return <HomePage/>
          
