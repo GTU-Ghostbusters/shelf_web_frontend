@@ -5,6 +5,7 @@ import HomePage from './Components/HomePage/HomePage';
 import AccountPage from './Components/AccountPage/AccountPage';
 import Books from './Components/Books/Books';
 import Members from './Components/Members/Members';
+import Reports from './Components/Reports/Reports';
 
 function App() {
     
@@ -23,6 +24,8 @@ function App() {
                         return <Books/>
                     case 3:
                         return <Members/>
+                    case 4:
+                        return <Reports/>
                         
                     default:
                         return null
