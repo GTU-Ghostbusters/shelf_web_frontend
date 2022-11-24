@@ -4,6 +4,7 @@ import Sidebar from './Components/Sidebar/Sidebar';
 import HomePage from './Components/HomePage/HomePage';
 import AccountPage from './Components/AccountPage/AccountPage';
 import Books from './Components/Books/Books';
+import Members from './Components/Members/Members';
 
 function App() {
     
@@ -20,7 +21,9 @@ function App() {
                         return <HomePage/>
                     case 2:
                         return <Books/>
-         
+                    case 3:
+                        return <Members/>
+                        
                     default:
                         return null
                     }
