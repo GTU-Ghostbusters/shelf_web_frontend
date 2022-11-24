@@ -5,7 +5,8 @@ import Logo from '../../imgs/logo.png'
 import './Sidebar.css'
 
 
-function Sidebar() {
+function Sidebar( {setSelected2} ) {
+
 
     const [selected , setSelected] = useState(0);
     return (
@@ -19,8 +20,12 @@ function Sidebar() {
                     return(
                         <div className={selected===index?'menuItem active':'menuItem'}
                             key={index}
-                            onClick={()=>setSelected(index)}
+                            onClick={
+                                ()=> {setSelected(index)
+                                      setSelected2(index)}
+                            }                     
                         >
+                            
                             <item.icon/>
                             <span>
                                 {item.heading}
@@ -32,5 +37,7 @@ function Sidebar() {
         </div>
     );
 };
+
+
 
 export default Sidebar
