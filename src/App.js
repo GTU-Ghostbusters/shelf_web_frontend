@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import Sidebar from './Components/Sidebar/Sidebar';
 import HomePage from './Components/HomePage/HomePage';
 import AccountPage from './Components/AccountPage/AccountPage';
+import Books from './Components/Books/Books';
 
 function App() {
     
@@ -17,6 +18,8 @@ function App() {
                         return <AccountPage/>
                     case 1:
                         return <HomePage/>
+                    case 2:
+                        return <Books/>
          
                     default:
                         return null
