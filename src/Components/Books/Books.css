@@ -4,3 +4,14 @@
     justify-content: space-evenly;
     margin: auto;
 }
+
+.BookList{
+    background: linear-gradient(10,10,10,10);
+    background-color:#deeefb;
+    display:grid;
+    height: 97%;
+    width: 97%;
+    border-radius: 2rem;
+    overflow: hidden;
+    grid-template-columns: 14rem auto;
+}
