@@ -23,4 +23,14 @@
     font-size: xx-large;
     border-radius: 1.7rem;
     margin: 2%;
+    padding: 10px;
+}
+
+.MemberInput{
+    text-align: center;
+    margin-left: 35%;
+    margin-right: 30%;
+    height: 4%;
+    width: 30%;
+    border-radius: 1.7rem;
 }

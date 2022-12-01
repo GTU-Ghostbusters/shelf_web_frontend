@@ -17,13 +17,17 @@ const Books = () => {
 
     return (
         <div className="Books">
-           <ul className="BooksList">
+            <input className="BookInput"></input>
+
+            <ul className="BooksList">
                 {books.map((book) => (
                     <li className="BooksListElement" key={book.id}>
                         {book.name}
                     </li>
                 ))}
-           </ul>
+            </ul>
+
+            
         </div>
     )
 }

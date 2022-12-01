@@ -15,6 +15,8 @@ const Members = () => {
 
     return (
         <div className="Members">
+            <input className="MemberInput"/>
+
            <ul className="MembersList">
                 {users.map((user) => (
                     <li className="MembersListElement" key={user.id}>
