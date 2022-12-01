@@ -15,9 +15,11 @@ const Members = () => {
 
     return (
         <div className="Members">
-           <ul>
+           <ul className="MembersList">
                 {users.map((user) => (
-                    <li key={user.id}>{user.name}</li>
+                    <li className="MembersListElement" key={user.id}>
+                        {user.name}
+                    </li>
                 ))}
            </ul>
         </div>

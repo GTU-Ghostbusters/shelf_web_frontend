@@ -1,6 +1,26 @@
 .Members{
+    background: #9ad9ea;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     margin: auto;
+    border-radius: 2rem;
+    height: 80%;
+    width: 80%;
+}
+
+.MembersList{
+    text-align: left;
+    padding: 20px;
+    list-style-type: none;
+    height:80%;
+    width: 96%;
+}
+
+.MembersListElement{
+    background-color: #35a2e5;
+    text-align: left;
+    font-size: xx-large;
+    border-radius: 1.7rem;
+    margin: 2%;
 }

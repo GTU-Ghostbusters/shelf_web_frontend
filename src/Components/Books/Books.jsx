@@ -6,18 +6,22 @@ import axios from "axios";
 
 const Books = () => {
     
-    const [users , setUsers] = useState([]);
+    const [books , setBooks] = useState([]);
     
     useEffect( () => {
-        axios("https://jsonplaceholder.typicode.com/users").then((res) =>
-        setUsers(res.data));
+        axios
+        .get('book_data.json')
+        .then((res) =>
+        setBooks(res.data));
     },[])
 
     return (
         <div className="Books">
-           <ul>
-                {users.map((user) => (
-                    <li key={user.id}>{user.name}</li>
+           <ul className="BooksList">
+                {books.map((book) => (
+                    <li className="BooksListElement" key={book.id}>
+                        {book.name}
+                    </li>
                 ))}
            </ul>
         </div>
