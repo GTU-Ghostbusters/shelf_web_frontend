@@ -3,7 +3,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    margin: auto;
+    margin-top:4%;
+    margin-left:10% ;
     border-radius: 2rem;
     height: 80%;
     width: 80%;
@@ -12,25 +13,30 @@
 .MembersList{
     text-align: left;
     padding: 20px;
-    list-style-type: none;
     height:80%;
     width: 96%;
+    margin:unset;
+    position: fixed;
 }
 
 .MembersListElement{
     background-color: #35a2e5;
     text-align: left;
     font-size: xx-large;
-    border-radius: 1.7rem;
+    border-radius: 1rem;
     margin: 2%;
-    padding: 10px;
+    padding: 0.75%;
+    list-style-type: none;
+    cursor: pointer;
 }
 
-.MemberInput{
+.header{
+    color: #0055ff;
+    margin-left: 2%;
+    font-size: xx-large;
+}
+
+.userInfo{
     text-align: center;
-    margin-left: 35%;
-    margin-right: 30%;
-    height: 4%;
-    width: 30%;
-    border-radius: 1.7rem;
+    font-size: xx-large;
 }

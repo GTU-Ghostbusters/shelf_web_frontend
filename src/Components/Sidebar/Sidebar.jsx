@@ -15,7 +15,7 @@ function Sidebar( {setSelected2} ) {
                 <img src={Logo} alt="" />              
             </div>
 
-            <div classhName="menu">
+            <div>
                 {SidebarData.map((item , index) => {
                     return(
                         <div className={selected===index?'menuItem active':'menuItem'}
@@ -23,9 +23,8 @@ function Sidebar( {setSelected2} ) {
                             onClick={
                                 ()=> {setSelected(index)
                                       setSelected2(index)}
-                            }                     
-                        >
-                            
+                            }>
+  
                             <item.icon/>
                             <span>
                                 {item.heading}
