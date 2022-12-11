@@ -12,11 +12,7 @@ const Members = () => {
         "MermberList":true,
     };
 
-    const [userInfoUserName , setUserInfoUserName] = useState();
-    const [userInfoFirstName , setUserInfoFirstName] = useState();
-    const [userInfoLastName , setUserInfoLastName] = useState();
-    const [userInfoEmail , setUserInfoEmail] = useState();
-    const [userInfoPhone , setUserInfoPhone] = useState();
+    const [userInfo , setUserInfo] = useState([]);
     const [userInfoVis , setUserInfoVis] = useState(0);
     
     useEffect( () => {
@@ -31,56 +27,52 @@ const Members = () => {
             <h1 className="header">MEMBERS</h1>
             
             <div className="Members">
-                <ul className={classes} >
-                    {users.map((user) => (
-                        <li className="MembersListElement" key={user.id}
-                            onClick = { () =>
-                                {
-                                    setUserInfoUserName(user.username)
-                                    setUserInfoFirstName(user.firstname)
-                                    setUserInfoLastName(user.lastname)
-                                    setUserInfoEmail(user.email)
-                                    setUserInfoPhone(user.phone)
-                                    setUserInfoVis(1)
-                                }
-                            }>
-                            {user.username}
-                        </li>
-                    ))}
-                </ul>
                 {(() => {
                     switch (userInfoVis) {
                     case 0:
-                        return
+                        return <ul className={classes} >
+                                    {userInfoVis === 0 && users.map((user) => (
+                                        <li className="MembersListElement" key={user.id}
+                                            onClick = { () =>
+                                            {
+                                                setUserInfo(user)
+                                                setUserInfoVis(1)
+                                            }
+                                        }>
+                                            {user.username}
+                                        </li>
+                                    ))}
+                                </ul>  
                     case 1:
                         return  <div className="userInfo">
+                                    <button className="buttonVis"
+                                        onClick={ () => setUserInfoVis(0)}>EXIT</button>
                                     <pre>
-                                    username: 
-                                    {userInfoUserName}
+                                        User name: 
+                                        {userInfo.username}
                                     </pre>
                                     <pre>
-                                    firstname: 
-                                    {userInfoFirstName}
+                                        First name: 
+                                        {userInfo.first_name}
                                     </pre>
                                     <pre>
-                                    lastname:
-                                    {userInfoLastName}
+                                        Last name:
+                                        {userInfo.last_name}
                                     </pre>
                                     <pre>
-                                    email:
-                                    {userInfoEmail}
+                                        E-mail:
+                                        {userInfo.email}
                                     </pre>
                                     <pre>
-                                    phone:
-                                    {userInfoPhone}
+                                        Phone number:
+                                        {userInfo.phone}
                                     </pre>
-                                    
+                                    <button className="buttonRemove">Block account</button>
                                 </div>
                     default:
                         return null
                     }
                 })()}
-                
             </div>
         </div>
     )

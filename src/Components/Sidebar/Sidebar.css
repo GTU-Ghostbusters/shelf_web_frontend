@@ -49,14 +49,14 @@
 
 .active{
 	margin-left: 0;
-	background: var(--activeItem);
+	background: #35a2e5;
 }
 
 .active::before{
 	content: '';
 	width: 8px;
 	height: 100%;
-	background: var(--pink);
+	background: #0055ff;
 	margin-right: calc(1rem - 8px);
 }
 

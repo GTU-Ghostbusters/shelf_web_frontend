@@ -12,11 +12,7 @@ const Books = () => {
         "BookList":true,
     };
 
-    const [bookInfoBookName , setBookInfoBookName] = useState();
-    const [bookInfoPage , setBookInfoPage] = useState();
-    const [bookInfoDonator , setBookInfoDonator] = useState();
-    const [bookInfoAuthor , setBookInfoAuthor] = useState();
-    const [bookInfoCategory , setBookInfoCategory] = useState();
+    const [bookInfo , setBookInfo] = useState([]);
     const [bookInfoVis , setBookInfoVis] = useState(0);
 
     useEffect( () => {
@@ -30,51 +26,48 @@ const Books = () => {
         <div>
             <h1 className="header">BOOKS</h1>
 
-        <div className="Books">            
-            <ul className={classes}>
-                {books.map((book) => (
-                    <li className="BooksListElement" key={book.id}
-                        onClick = { () =>
-                            {
-                                setBookInfoBookName(book.name)
-                                setBookInfoPage(book.pagecount)
-                                setBookInfoDonator(book.donator)
-                                setBookInfoAuthor(book.author)
-                                setBookInfoCategory(book.category)
-                                setBookInfoVis(1)
-                            }
-                        }>
-                        {book.name}
-                    </li>
-                ))}
-            </ul>
-            {(() => {
+            <div className="Books">            
+                {(() => {
                     switch (bookInfoVis) {
                     case 0:
-                        return
+                        return  <ul className={classes}>
+                                    {books.map((book) => (
+                                        <li className="BooksListElement" key={book.id}
+                                            onClick = { () =>
+                                            {   
+                                                setBookInfo(book)
+                                                setBookInfoVis(1)
+                                            }
+                                            }>
+                                            {book.name}
+                                        </li>
+                                    ))}
+                                </ul>
                     case 1:
                         return  <div className="bookInfo">
+                                    <button className="buttonVis"
+                                        onClick={ () => setBookInfoVis(0)}>EXIT</button>
                                     <pre>
-                                    bookname: 
-                                    {bookInfoBookName}
+                                        bookname: 
+                                        {bookInfo.name}
                                     </pre>
                                     <pre>
-                                    page count: 
-                                    {bookInfoPage}
+                                        page count: 
+                                        {bookInfo.page_count}
                                     </pre>
                                     <pre>
-                                    donator:
-                                    {bookInfoDonator}
+                                        donator:
+                                        {bookInfo.donator}
                                     </pre>
                                     <pre>
-                                    author:
-                                    {bookInfoAuthor}
+                                        author:
+                                        {bookInfo.author}
                                     </pre>
                                     <pre>
-                                    category:
-                                    {bookInfoCategory}
-                                    </pre>
-                                    
+                                        category:
+                                        {bookInfo.category}
+                                    </pre>     
+                                    <button className="buttonRemove">Remove book</button>
                                 </div>
                     default:
                         return null

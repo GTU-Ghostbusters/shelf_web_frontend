@@ -30,13 +30,40 @@
     cursor: pointer;
 }
 
+.BooksListElement:hover{
+	cursor: pointer
+}
+
 .bookInfo{
-    text-align: center;
     font-size: xx-large;
+    background-color: #35a2e5;
+    border-radius: 1rem;
+    width: 60%;
+    margin: auto;
 }
 
 .header{
     color: #0055ff;
     margin-left: 2%;
     font-size: xx-large;
+}
+
+
+.buttonVis{
+    background-color: rgb(131, 98, 98);
+    position: fixed;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    position: absolute;
+    right: 24%;
+}
+
+.buttonRemove{
+    background-color: rgb(131, 98, 98);
+    position: fixed;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    position: absolute;
+    right: 24%;
+    bottom: 34%; 
 }
