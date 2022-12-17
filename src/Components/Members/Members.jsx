@@ -31,7 +31,7 @@ const Members = () => {
                     switch (userInfoVis) {
                     case 0:
                         return <ul className={classes} >
-                                    {userInfoVis === 0 && users.map((user) => (
+                                    {users.map((user) => (
                                         <li className="MembersListElement" key={user.id}
                                             onClick = { () =>
                                             {
@@ -67,7 +67,6 @@ const Members = () => {
                                         Phone number:
                                         {userInfo.phone}
                                     </pre>
-                                    <button className="buttonRemove">Block account</button>
                                 </div>
                     default:
                         return null

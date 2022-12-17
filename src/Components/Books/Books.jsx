@@ -67,7 +67,7 @@ const Books = () => {
                                         category:
                                         {bookInfo.category}
                                     </pre>     
-                                    <button className="buttonRemove">Remove book</button>
+                                    
                                 </div>
                     default:
                         return null

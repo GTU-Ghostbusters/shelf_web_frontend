@@ -9,11 +9,11 @@ import {
   export const SidebarData = [
   {
     icon: UilEstate,
-    heading: "Account page",
+    heading: "Home page",
   },
   {
     icon: UilEstate,
-    heading: "Home page",
+    heading: "Account page",
   },
   {
     icon: UilClipboardAlt,

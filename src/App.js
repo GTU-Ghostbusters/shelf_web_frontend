@@ -17,9 +17,9 @@ function App() {
                 {(() => {
                     switch (selected2) {
                     case 0:
-                        return <AccountPage/>
-                    case 1:
                         return <HomePage/>
+                    case 1:
+                        return <AccountPage/>
                     case 2:
                         return <Books/>
                     case 3:
