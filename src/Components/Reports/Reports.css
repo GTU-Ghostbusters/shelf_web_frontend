@@ -6,7 +6,7 @@
     margin-top:4%;
     margin-left:10%;
     border-radius: 3%;
-    height: 80%;
+    height: 60%;
     width: 80%;
 }
 
@@ -51,4 +51,8 @@
     cursor: pointer;
     position: absolute;
     right: 24%;
+}
+
+.report{
+    font-size: small;
 }

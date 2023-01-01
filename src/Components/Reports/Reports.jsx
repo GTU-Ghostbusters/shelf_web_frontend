@@ -1,8 +1,8 @@
-import axios from "axios";
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react'
 import './Reports.css'
+import axios from "axios";
 
 const Reports = () => {
 
@@ -17,58 +17,34 @@ const Reports = () => {
 
     useEffect( () => {
         axios
-        .get('users.json')
+        .get('reports.json')
         .then((res) => 
         setReports(res.data));
     },[])
+    
     return (
         <div>
            <h1 className="header">REPORTS</h1>
+           
            <div className="Reports">
-                {(() => {
-                    switch (reportInfoVis) {
-                    case 0:
-                        return <ul className={classes} >
-                        {reports.map((report) => (
-                            <li className="ReportListElement" key={report.id}
-                                onClick = { () =>
-                                {
-                                    setReportInfo(report)
-                                    setReportInfoVis(1)
-                                }
-                            }>
-                                {report.username}
-                            </li>
-                        ))}
-                    </ul>
-                    case 1:
-                        return  <div className="reportInfo">
-                        <button className="buttonVis"
-                            onClick={ () => setReportInfoVis(0)}>EXIT</button>
-                        <pre>
-                            User name: 
-                            {reportInfo.username}
-                        </pre>
-                        <pre>
-                            First name: 
-                            {reportInfo.first_name}
-                        </pre>
-                        <pre>
-                            Last name:
-                            {reportInfo.last_name}
-                        </pre>
-                        <pre>
-                            E-mail:
-                            {reportInfo.email}
-                        </pre>
-                        <pre>
-                            Phone number:
-                            {reportInfo.phone}
-                        </pre>
-                    </div>
-                    default :
-                        return null
-                }})}
+                                <ul className={classes} >
+                                    {reports.map((report) => (
+                                        <li className="ReportListElement" key={report.id}
+                                             onClick = { () =>
+                                            {
+                                                setReportInfo(report)
+                                                setReportInfoVis(1)
+                                            }
+                                        }>
+                                            <div className="report">
+                                                <h4>Message:</h4>
+                                                <div>{report.message}</div>
+                                                <h4>Sender:</h4>
+                                                <div>{report.sender}</div>
+                                            </div>
+                                        </li>
+                                    ))}
+                                </ul>
            </div>
         </div>
     )
