@@ -20,9 +20,9 @@
 }
 
 .MembersListElement{
-    background-color: #35a2e5;
+    background-color: #cce6f7;
     text-align: left;
-    font-size: xx-large;
+    font-size: large;
     border-radius: 1rem;
     margin: 2%;
     padding: 0.75%;
@@ -30,22 +30,16 @@
     cursor: pointer;
 }
 
-.header{
-    color: #0055ff;
-    margin-left: 2%;
-    font-size: xx-large;
-}
 
 .userInfo{
     font-size: xx-large;
-    background-color: #35a2e5;
+    background-color: #cce6f7;
     border-radius: 1rem;
     width: 60%;
     margin: auto;
 }
 
 .buttonVis{
-    background-color: rgb(65, 63, 226);
     position: fixed;
     border-radius: 0.5rem;
     cursor: pointer;
