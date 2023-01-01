@@ -24,8 +24,6 @@ const Books = () => {
 
     return (
         <div>
-            <h1 className="header">BOOKS</h1>
-
             <div className="Books">            
                 {(() => {
                     switch (bookInfoVis) {

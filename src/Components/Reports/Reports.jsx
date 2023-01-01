@@ -11,10 +11,7 @@ const Reports = () => {
         'container':true,
         "ReportList":true,
     };
-
-    const [reportInfo , setReportInfo] = useState([]);
-    const [reportInfoVis , setReportInfoVis] = useState(0);
-
+    
     useEffect( () => {
         axios
         .get('reports.json')
@@ -24,27 +21,19 @@ const Reports = () => {
     
     return (
         <div>
-           <h1 className="header">REPORTS</h1>
-           
            <div className="Reports">
-                                <ul className={classes} >
-                                    {reports.map((report) => (
-                                        <li className="ReportListElement" key={report.id}
-                                             onClick = { () =>
-                                            {
-                                                setReportInfo(report)
-                                                setReportInfoVis(1)
-                                            }
-                                        }>
-                                            <div className="report">
-                                                <h4>Message:</h4>
-                                                <div>{report.message}</div>
-                                                <h4>Sender:</h4>
-                                                <div>{report.sender}</div>
-                                            </div>
-                                        </li>
-                                    ))}
-                                </ul>
+                <ul className={classes} >
+                    {reports.map((report) => (
+                        <li className="ReportListElement" key={report.id}>
+                            <div className="report">
+                                <h4>Message:</h4>
+                                <div>{report.message}</div>
+                                <h4>Sender:</h4>
+                                <div>{report.sender}</div>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
            </div>
         </div>
     )

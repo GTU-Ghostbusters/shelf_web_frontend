@@ -24,8 +24,6 @@ const Members = () => {
 
     return (
         <div>
-            <h1 className="header">MEMBERS</h1>
-            
             <div className="Members">
                 {(() => {
                     switch (userInfoVis) {

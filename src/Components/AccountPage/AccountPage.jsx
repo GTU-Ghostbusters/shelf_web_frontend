@@ -58,7 +58,6 @@ const AccountPage = () => {
     }
     return (    
         <div>
-            <h1 className="header">ACCOUNT PAGE</h1>
             <div className="info">
                 {(() => {
                     switch(isOpen){

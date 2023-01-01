@@ -22,7 +22,11 @@ function Sidebar( {setSelected2} ) {
                             key={index}
                             onClick={
                                 ()=> {setSelected(index)
-                                      setSelected2(index)}
+                                      setSelected2(index)
+                                      if (index === 5) {
+                                        window.location.reload(false)
+                                      }
+                                    }
                             }>
   
                             <item.icon/>

@@ -10,33 +10,43 @@ import {Login} from "./Login";
 
 
 function App() {
-    
     const [selected2 , setSelected2] = useState(0);
+    const [isLogin , setLogin] = useState(0);
+
     return ( 
         <>
-            <Login/>
-            {/* <div className="App">
-                <div className="AppGlass"> 
-                    <Sidebar setSelected2={setSelected2}/>
-                    {(() => {
-                        switch (selected2) {
+            { 
+            <div className="App">
+                {(() => {
+                        switch (isLogin) {
                         case 0:
-                            return <HomePage/>
+                            return <Login setLogin={setLogin}/>
                         case 1:
-                            return <AccountPage/>
-                        case 2:
-                            return <Books/>
-                        case 3:
-                            return <Members/>
-                        case 4:
-                            return <Reports/>
-                        
+                            return  <div className="AppGlass"> 
+                                        <Sidebar setSelected2={setSelected2}/>
+                                        {(() => {
+                                        switch (selected2) {
+                                        case 0:
+                                            return <HomePage/>
+                                        case 1:
+                                            return <AccountPage/>
+                                        case 2:
+                                            return <Books/>
+                                        case 3:
+                                            return <Members/>
+                                        case 4:
+                                            return <Reports/>
+                                        default:
+                                            return null
+                                        }
+                                    })()}
+                                </div>
                         default:
                             return null
                         }
-                    })()}
-                </div>    
-            </div> */}
+                })()}  
+            </div> 
+            }
         </>
     );
 }
