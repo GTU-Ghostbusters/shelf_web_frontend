@@ -115,7 +115,7 @@ const Books = () => {
                                 </div>
                     case 2:
                         return  <div className="popup">
-                                    The user with that name: <b>{bookInfo.name}</b> will be blocked. Are you sure?
+                                    The user with that name: <b>{bookInfo.name}</b> will be deleted. Are you sure?
                                     <button onClick={ () => { 
                                         axios
                                         .get(`https://hodikids.com/api/books/${bookInfo.id}/delete`) 

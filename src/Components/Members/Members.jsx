@@ -33,7 +33,7 @@ const Members = () => {
         }
         return true;
     }
-    function search(use) {
+    function search(users) {
         return users.filter(
           (item) =>
             search_parameters.some((parameter) =>
@@ -47,7 +47,7 @@ const Members = () => {
     const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
     const paginate = pageNumber => setCurrentPage(pageNumber);
     const pageNumbers = [];
-    const search_parameters = Object.keys(Object.assign({}, ...currentUsers));
+    const search_parameters = ["name","email"];
 
     for (let i = 1; i <= Math.ceil(users.length / usersPerPage); i++) {
         pageNumbers.push(i);
