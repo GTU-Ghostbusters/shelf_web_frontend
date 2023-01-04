@@ -33,14 +33,14 @@ const Members = () => {
         }
         return true;
     }
-    function search(data) {
+    function search(users) {
         return users.filter(
           (item) =>
             search_parameters.some((parameter) =>
               item[parameter].toString().toLowerCase().includes(query)
             )
         );
-      }
+    }
 
     const indexOfLastUser = currentPage * usersPerPage;
     const indexOfFirstUser = indexOfLastUser - usersPerPage;

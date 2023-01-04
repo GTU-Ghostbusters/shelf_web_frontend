@@ -1,7 +1,7 @@
 .Members{
     background: #9ad9ea;
     display: flex;
-    flex-direction: column;
+    flex-direction: center;
     justify-content: space-evenly;
     margin-top:4%;
     margin-left:10%;
@@ -49,4 +49,10 @@
 .popup{
     text-align: center;
     border-width: 2px;
+}
+
+.page{
+    position: fixed;
+    left: 51%;
+    top:  25%;
 }

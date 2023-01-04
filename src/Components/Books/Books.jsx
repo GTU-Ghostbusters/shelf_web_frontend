@@ -9,36 +9,82 @@ const Books = () => {
     const [books , setBooks] = useState([]);
     const [bookInfo , setBookInfo] = useState([]);
     const [bookInfoVis , setBookInfoVis] = useState(0);
+    const [loading, setLoading] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [booksPerPage] = useState(10);
+    const [query, setQuery] = useState(""); 
     const classes = {
         'container':true,
         "BookList":true,
     };
     
     useEffect( () => {
+        setLoading(1);
         axios.get('https://hodikids.com/api/books')
         .then((res) =>
         setBooks(res.data));
+        setLoading(0);
     },[bookInfoVis])
 
+    function search(books) {
+        return books.filter(
+          (item) =>
+            search_parameters.some((parameter) =>
+              item[parameter].toString().toLowerCase().includes(query)
+            )
+        );
+    }
+
+    const indexOfLastBook = currentPage * booksPerPage;
+    const indexOfFirstBook = indexOfLastBook - booksPerPage;
+    const currentBooks = books.slice(indexOfFirstBook, indexOfLastBook);
+    const paginate = pageNumber => setCurrentPage(pageNumber);
+    const pageNumbers = [];
+    const search_parameters = Object.keys(Object.assign({}, ...currentBooks));
+
+    for (let i = 1; i <= Math.ceil(books.length / booksPerPage); i++) {
+        pageNumbers.push(i);
+    }
     return (
         <div>
             <div className="Books">            
                 {(() => {
                     switch (bookInfoVis) {
                     case 0:
-                        return  <ul className={classes}>
-                                    {books.map((book) => (
-                                        <li className="BooksListElement" key={book.id}
-                                            onClick = { () =>
-                                            {   
-                                                setBookInfo(book)
-                                                setBookInfoVis(1)
-                                            }
-                                            }>
-                                            {book.name}
-                                        </li>
+                        if (loading) {
+                            return <h2>Loading...</h2>;
+                        }
+                        return  <div className={classes}>
+                                    <label htmlFor="search-form">
+                                        <input
+                                            type="search"
+                                            name="search-form"
+                                            id="search-form"
+                                            placeholder="Search user..."
+                                            onChange={(e) => setQuery(e.target.value)}
+                                        />
+                                    </label>
+                                    {search(currentBooks).map((book) => (
+                                        <li className="MemberList" key={book.id} 
+                                        onClick = { () =>
+                                           {   
+                                               setBookInfo(book)
+                                               setBookInfoVis(1)
+                                           }
+                                           }>
+                                       {book.name}
+                                       </li>
                                     ))}
-                                </ul>
+                                    <nav className="page">
+                                        {pageNumbers.map(number => (
+                                          <button key={number} className='page-item'>
+                                            <a onClick={() => paginate(number)} href='!#'>
+                                              {number}
+                                            </a>
+                                          </button>
+                                        ))}
+                                    </nav>
+                                </div> 
                     case 1:
                         return  <div className="bookInfo">
                                     <button className="buttonVis"

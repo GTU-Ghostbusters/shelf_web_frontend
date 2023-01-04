@@ -1,7 +1,7 @@
 .Books{
     background: #9ad9ea;
     display: flex;
-    flex-direction: column;
+    flex-direction: center;
     justify-content: space-evenly;
     margin-top:4%;
     margin-left:10% ;
@@ -42,4 +42,16 @@
 
 .buttonVis{
     color: #cce6f7;
+}
+
+.page{
+    position: fixed;
+    left: 51%;
+    top:  25%;
+}
+
+.search{
+    position: fixed;
+    left: 51%;
+    top:  5%;
 }
