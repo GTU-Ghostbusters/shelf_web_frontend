@@ -7,20 +7,18 @@ import axios from "axios";
 const Books = () => {
     
     const [books , setBooks] = useState([]);
+    const [bookInfo , setBookInfo] = useState([]);
+    const [bookInfoVis , setBookInfoVis] = useState(0);
     const classes = {
         'container':true,
         "BookList":true,
     };
-
-    const [bookInfo , setBookInfo] = useState([]);
-    const [bookInfoVis , setBookInfoVis] = useState(0);
-
+    
     useEffect( () => {
-        axios
-        .get('books.json')
+        axios.get('https://hodikids.com/api/books')
         .then((res) =>
         setBooks(res.data));
-    },[])
+    },[bookInfoVis])
 
     return (
         <div>
@@ -65,7 +63,25 @@ const Books = () => {
                                         category:
                                         {bookInfo.category}
                                     </pre>     
-                                    
+                                    <button onClick={() => 
+                                    {
+                                        setBookInfoVis(2)
+                                    }}>
+                                        delete
+                                    </button>
+                                </div>
+                    case 2:
+                        return  <div className="popup">
+                                    The user with that name: <b>{bookInfo.name}</b> will be blocked. Are you sure?
+                                    <button onClick={ () => { 
+                                        axios
+                                        .get(`https://hodikids.com/api/books/${bookInfo.id}/delete`) 
+                                        setBookInfoVis(0)}}
+                                        > Yes
+                                    </button>
+                                    <button onClick={ () => {setBookInfoVis(1)}}>
+                                        No
+                                    </button>
                                 </div>
                     default:
                         return null

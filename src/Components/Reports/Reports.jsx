@@ -14,7 +14,7 @@ const Reports = () => {
     
     useEffect( () => {
         axios
-        .get('reports.json')
+        .get('https://hodikids.com/api/reports')
         .then((res) => 
         setReports(res.data));
     },[])
@@ -30,6 +30,12 @@ const Reports = () => {
                                 <div>{report.message}</div>
                                 <h4>Sender:</h4>
                                 <div>{report.sender}</div>
+                                {/* <button onClick={() => 
+                                    {
+                                        axios
+                                        .get(`https://hodikids.com/api/user/${userInfo.id}/delete`)
+                                    }}>
+                                </button> */}
                             </div>
                         </li>
                     ))}

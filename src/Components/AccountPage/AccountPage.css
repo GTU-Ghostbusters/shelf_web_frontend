@@ -19,3 +19,14 @@
     list-style-type: none;
     cursor: pointer;
 }
+
+.exit_popup{
+    background-color: #cce6f7;
+    text-align: left;
+    font-size: xx-large;
+    border-radius: 1rem;
+    margin: 2%;
+    padding: 0.75%;
+    list-style-type: none;
+    cursor: pointer;
+}
