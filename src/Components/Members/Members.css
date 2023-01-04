@@ -19,14 +19,13 @@
     position: fixed;
 }
 
-.MembersListElement{
+.page{
     background-color: #cce6f7;
-    text-align: left;
+    text-align: center;
     font-size: large;
     border-radius: 1rem;
     margin: 2%;
     padding: 0.75%;
-    list-style-type: none;
     cursor: pointer;
 }
 
@@ -45,4 +44,9 @@
     cursor: pointer;
     position: absolute;
     right: 24%;
+}
+
+.popup{
+    text-align: center;
+    border-width: 2px;
 }
