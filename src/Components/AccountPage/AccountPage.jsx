@@ -20,7 +20,7 @@ const AccountPage = () => {
         axios
         .get(`https://hodikids.com/api/users`)
         .then((res) => 
-        setAdmin(res.data[1]))
+        setAdmin(res.data[2]))
     },[])
 
     

@@ -33,7 +33,7 @@ const Members = () => {
         }
         return true;
     }
-    function search(users) {
+    function search(use) {
         return users.filter(
           (item) =>
             search_parameters.some((parameter) =>
@@ -85,11 +85,9 @@ const Members = () => {
                                     ))}
                                     <nav className="page">
                                         {pageNumbers.map(number => (
-                                          <button key={number} className='page-item'>
-                                            <a onClick={() => paginate(number)} href='!#'>
+                                            <button onClick={() => paginate(number)} href='!#' key={number} className='page-item'>
                                               {number}
-                                            </a>
-                                          </button>
+                                            </button>
                                         ))}
                                     </nav>
                                 </div>  

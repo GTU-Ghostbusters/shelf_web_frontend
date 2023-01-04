@@ -28,9 +28,9 @@ const Books = () => {
 
     function search(books) {
         return books.filter(
-          (item) =>
+          (book) =>
             search_parameters.some((parameter) =>
-              item[parameter].toString().toLowerCase().includes(query)
+              book[parameter].toString().toLowerCase().includes(query)
             )
         );
     }
@@ -40,8 +40,7 @@ const Books = () => {
     const currentBooks = books.slice(indexOfFirstBook, indexOfLastBook);
     const paginate = pageNumber => setCurrentPage(pageNumber);
     const pageNumbers = [];
-    const search_parameters = Object.keys(Object.assign({}, ...currentBooks));
-
+    const search_parameters = ["name","author","category"];
     for (let i = 1; i <= Math.ceil(books.length / booksPerPage); i++) {
         pageNumbers.push(i);
     }
@@ -77,11 +76,9 @@ const Books = () => {
                                     ))}
                                     <nav className="page">
                                         {pageNumbers.map(number => (
-                                          <button key={number} className='page-item'>
-                                            <a onClick={() => paginate(number)} href='!#'>
+                                            <button onClick={() => paginate(number)} href='!#' key={number} className='page-item'>
                                               {number}
-                                            </a>
-                                          </button>
+                                            </button>
                                         ))}
                                     </nav>
                                 </div> 
