@@ -1,4 +1,4 @@
-// import axios from "axios";
+import axios from "axios";
 import React, { useState } from "react";
 
 export const Login = ( {setLogin} ) => {
@@ -9,14 +9,25 @@ export const Login = ( {setLogin} ) => {
         e.preventDefault();
         console.log(email_log);
         console.log(pass_log);
-        // axios
-        // .post(`https://hodikids.com/api/login`,
-        //     {
-        //     email : email_log,
-        //     password : pass_log
-        //     }
-        // )
-        setLogin(1);
+
+        try {
+            axios({
+                method: 'post',
+                url: "https://hodikids.com/api/login",
+                data: {
+                        "email" : "koramazsuleyman01@gmail.com",
+                        "password": "12345"
+                      }
+            })
+            .then((res) => {               
+                if(res.status === 200){
+                    setLogin(1);
+                }
+            })
+        } catch (error) {
+            console.log(error);
+        }
+        
     }
     
   

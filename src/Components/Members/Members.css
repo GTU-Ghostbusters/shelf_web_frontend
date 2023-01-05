@@ -1,7 +1,5 @@
 .Members{
     background: #9ad9ea;
-    display: flex;
-    flex-direction: center;
     justify-content: space-evenly;
     margin-top:4%;
     margin-left:10%;
@@ -12,7 +10,7 @@
 
 .MembersList{
     text-align: left;
-    padding: 5%;
+    padding: 3%;
     height:80%;
     width: 96%;
     margin:unset;
@@ -25,7 +23,7 @@
     font-size: large;
     border-radius: 0.8rem;
     margin: 2%;
-    padding: 1%;
+    padding: 0.5%;
     list-style-type: none;
     cursor: pointer;
 }
@@ -39,11 +37,11 @@
     text-align: center;
     font-size: large;
     border-radius: 1rem;
-    padding: 0.30%;
+    padding: 0.10%;
     cursor: pointer;
     position: fixed;
     left: 53.8%;
-    top:  75%;
+    top:  78%;
 }
 
 
@@ -66,10 +64,9 @@
 }
 
 .popup{
-    text-align: center;
     border-width: 2px;
-}
-
-.page{
-    
+    position: fixed;
+    top: 42%;
+    left: 36%;
+    border-color: black;
 }

@@ -80,7 +80,7 @@ const Members = () => {
                                                setUserInfoVis(1)
                                            }
                                            }>
-                                       {user.email}
+                                       {user.name}
                                        </li>
                                     ))}
                                     <nav className="page">
@@ -94,12 +94,16 @@ const Members = () => {
                     case 1:
                         return  <div className="userInfo">
                                     <pre>
-                                        Name: 
+                                        <b>Name  :</b> 
                                         {userInfo.name}
                                     </pre>
                                     <pre>
-                                        E-mail:
+                                        <b>E-mail:</b>
                                         {userInfo.email}
+                                    </pre>
+                                    <pre>
+                                        <b>Phone :</b> 
+                                        {userInfo.phone}
                                     </pre>
                                     <button
                                         onClick={ () => setUserInfoVis(0)}>back</button>

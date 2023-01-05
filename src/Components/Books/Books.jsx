@@ -54,7 +54,7 @@ const Books = () => {
                             return <h2>Loading...</h2>;
                         }
                         return  <div className={classes}>
-                                    <label htmlFor="search-form">
+                                    <label htmlFor="search-form" className="search">
                                         <input
                                             type="search"
                                             name="search-form"
@@ -85,23 +85,23 @@ const Books = () => {
                     case 1:
                         return  <div className="bookInfo">
                                     <pre>
-                                        bookname: 
+                                        <b>Bookname  :</b> 
                                         {bookInfo.name}
                                     </pre>
                                     <pre>
-                                        page count: 
+                                        <b>Page count:</b> 
                                         {bookInfo.page_count}
                                     </pre>
                                     <pre>
-                                        donator:
-                                        {bookInfo.donator}
+                                        <b>Donor     :</b>
+                                        {bookInfo.donor}
                                     </pre>
                                     <pre>
-                                        author:
+                                        <b>Author    :</b>
                                         {bookInfo.author}
                                     </pre>
                                     <pre>
-                                        category:
+                                        <b>Category  :</b>
                                         {bookInfo.category}
                                     </pre>     
                                     <button
