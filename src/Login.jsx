@@ -15,13 +15,15 @@ export const Login = ( {setLogin} ) => {
                 method: 'post',
                 url: "https://hodikids.com/api/login",
                 data: {
-                        "email" : "koramazsuleyman01@gmail.com",
-                        "password": "12345"
+                        "email" : email_log,
+                        "password": pass_log
                       }
             })
             .then((res) => {               
                 if(res.status === 200){
-                    setLogin(1);
+                    if (res.data.user.is_superuser === 1) {
+                        setLogin(1);
+                    }
                 }
             })
         } catch (error) {
@@ -40,8 +42,7 @@ export const Login = ( {setLogin} ) => {
                 <label htmlFor="password">password</label>
                 <input value={pass_log} onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
                 <button type="submit">Log In</button>
-            </form>
-            
+            </form>  
         </div>
     )
 }

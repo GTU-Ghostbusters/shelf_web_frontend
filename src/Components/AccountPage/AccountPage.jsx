@@ -5,7 +5,7 @@ import axios from "axios";
 import { useEffect } from 'react';
 import { useRef } from 'react';
 
-const AccountPage = () => {
+const AccountPage = ({setLogin}) => {
 
     const [admin , setAdmin] = useState([]);
     const [isOpen , setIsOpen] = useState(0);
@@ -19,7 +19,7 @@ const AccountPage = () => {
         axios
         .get(`https://hodikids.com/api/users`)
         .then((res) => 
-        setAdmin(res.data[1]))
+        controlA(res.data[1]))
     },[updated])
 
     function updateUser(){
@@ -40,6 +40,14 @@ const AccountPage = () => {
         setUpdated(1);
     }
     
+    function controlA(data){
+        if(data.is_superuser === 1){
+            setAdmin(data);
+        }
+        else{
+            console.log("error!");
+        }
+    }
 
     return (    
         <div>
