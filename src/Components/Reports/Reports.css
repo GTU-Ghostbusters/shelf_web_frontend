@@ -50,3 +50,15 @@
 .report{
     font-size: small;
 }
+
+.page{
+    background-color: #cce6f7;
+    text-align: center;
+    font-size: large;
+    border-radius: 1rem;
+    padding: 0.30%;
+    cursor: pointer;
+    position: fixed;
+    left: 53.8%;
+    top:  75%;
+}

@@ -64,7 +64,7 @@ const Books = () => {
                                         />
                                     </label>
                                     {search(currentBooks).map((book) => (
-                                        <li className="MemberList" key={book.id} 
+                                        <li className="BooksListElement" key={book.id} 
                                         onClick = { () =>
                                            {   
                                                setBookInfo(book)
@@ -84,8 +84,6 @@ const Books = () => {
                                 </div> 
                     case 1:
                         return  <div className="bookInfo">
-                                    <button className="buttonVis"
-                                        onClick={ () => setBookInfoVis(0)}>EXIT</button>
                                     <pre>
                                         bookname: 
                                         {bookInfo.name}
@@ -106,12 +104,15 @@ const Books = () => {
                                         category:
                                         {bookInfo.category}
                                     </pre>     
+                                    <button
+                                        onClick={ () => setBookInfoVis(0)}>back</button>
                                     <button onClick={() => 
                                     {
                                         setBookInfoVis(2)
                                     }}>
                                         delete
                                     </button>
+                                    
                                 </div>
                     case 2:
                         return  <div className="popup">

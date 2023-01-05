@@ -59,7 +59,7 @@ const Members = () => {
                     switch (userInfoVis) {
                     case 0:
                         if (loading) {
-                            return <h2>Loading...</h2>;
+                            return <div>Loading...</div>;
                         }
                         return  <div className={classes}>
                                     <label htmlFor="search-form">
@@ -73,7 +73,7 @@ const Members = () => {
                                         />
                                     </label>
                                     {search(currentUsers).map((user) => (
-                                        <li className="MemberList" key={user.id} 
+                                        <li className="MembersListElement" key={user.id} 
                                         onClick = { () =>
                                            {   
                                                setUserInfo(user)
@@ -93,8 +93,6 @@ const Members = () => {
                                 </div>  
                     case 1:
                         return  <div className="userInfo">
-                                    <button className="buttonVis"
-                                        onClick={ () => setUserInfoVis(0)}>EXIT</button>
                                     <pre>
                                         Name: 
                                         {userInfo.name}
@@ -103,6 +101,8 @@ const Members = () => {
                                         E-mail:
                                         {userInfo.email}
                                     </pre>
+                                    <button
+                                        onClick={ () => setUserInfoVis(0)}>back</button>
                                     <button onClick={() => 
                                     {
                                         setUserInfoVis(2)
