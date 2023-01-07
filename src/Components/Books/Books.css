@@ -37,7 +37,9 @@
     background-color: #cce6f7;
     border-radius: 1rem;
     width: 50%;
-    margin: auto;
+    position: fixed;
+    top: 30%;
+    left: 30%;
 }
 
 .page{
@@ -50,4 +52,10 @@
     position: fixed;
     left: 53.8%;
     top:  75%;
+}
+
+.photos{
+    position: fixed;
+    left: 40%;
+    top:  44%;
 }

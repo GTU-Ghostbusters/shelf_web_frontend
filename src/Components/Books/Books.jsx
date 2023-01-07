@@ -13,6 +13,13 @@ const Books = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [booksPerPage] = useState(10);
     const [query, setQuery] = useState(""); 
+
+    // const [image1,setImage1] = useState("");
+    // const [image2,setImage2] = useState("");
+    // const [image3,setImage3] = useState("");
+
+    // const Example = ({ data }) => <img src={`data:image/jpeg;base64,${data}`} />
+
     const classes = {
         'container':true,
         "BookList":true,
@@ -37,11 +44,12 @@ const Books = () => {
 
     const indexOfLastBook = currentPage * booksPerPage;
     const indexOfFirstBook = indexOfLastBook - booksPerPage;
-    const currentBooks = books.slice(indexOfFirstBook, indexOfLastBook);
     const paginate = pageNumber => setCurrentPage(pageNumber);
     const pageNumbers = [];
     const search_parameters = ["name","author","category"];
-    for (let i = 1; i <= Math.ceil(books.length / booksPerPage); i++) {
+    const currentBooks = search(books).slice(indexOfFirstBook, indexOfLastBook);
+
+    for (let i = 1; i <= Math.ceil(search(books).length / booksPerPage); i++) {
         pageNumbers.push(i);
     }
     return (
@@ -63,11 +71,14 @@ const Books = () => {
                                             onChange={(e) => setQuery(e.target.value)}
                                         />
                                     </label>
-                                    {search(currentBooks).map((book) => (
+                                    {currentBooks.map((book) => (
                                         <li className="BooksListElement" key={book.id} 
                                         onClick = { () =>
                                            {   
                                                setBookInfo(book)
+                                            //    setImage1(toString(book.image1))
+                                            //    setImage2(toString(book.image2))
+                                            //    setImage3(toString(book.image3))
                                                setBookInfoVis(1)
                                            }
                                            }>
@@ -103,7 +114,10 @@ const Books = () => {
                                     <pre>
                                         <b>Category  :</b>
                                         {bookInfo.category}
-                                    </pre>     
+                                    </pre>    
+                                    {/* <button onClick={ () => setBookInfoVis(3)}>
+                                        <b>Photos</b>
+                                    </button>   */}
                                     <button
                                         onClick={ () => setBookInfoVis(0)}>back</button>
                                     <button onClick={() => 
@@ -127,6 +141,15 @@ const Books = () => {
                                         No
                                     </button>
                                 </div>
+                    // case 3:
+                    //     return  <div className="photos">
+                    //                 <b>PHOTOS:</b>
+                    //                 <button
+                    //                     onClick={ () => setBookInfoVis(1)}>back</button>
+                    //                 {image1}
+                    //                 <Example data ={image1} />
+                                    
+                    //             </div>
                     default:
                         return null
                     }

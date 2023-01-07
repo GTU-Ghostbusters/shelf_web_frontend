@@ -44,12 +44,12 @@ const Members = () => {
 
     const indexOfLastUser = currentPage * usersPerPage;
     const indexOfFirstUser = indexOfLastUser - usersPerPage;
-    const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
     const paginate = pageNumber => setCurrentPage(pageNumber);
     const pageNumbers = [];
     const search_parameters = ["name","email"];
+    const currentUsers = search(users).slice(indexOfFirstUser, indexOfLastUser);
 
-    for (let i = 1; i <= Math.ceil(users.length / usersPerPage); i++) {
+    for (let i = 1; i <= Math.ceil(search(users).length / usersPerPage); i++) {
         pageNumbers.push(i);
     }
     return (
@@ -72,7 +72,7 @@ const Members = () => {
                                             onChange={(e) => setQuery(e.target.value)}
                                         />
                                     </label>
-                                    {search(currentUsers).map((user) => (
+                                    {currentUsers.map((user) => (
                                         <li className="MembersListElement" key={user.id} 
                                         onClick = { () =>
                                            {   

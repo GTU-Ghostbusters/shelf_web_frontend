@@ -7,7 +7,9 @@ import './Sidebar.css'
 
 function Sidebar( {setSelected2} ) {
 
-
+    function logOut(){
+        
+    }
     const [selected , setSelected] = useState(0);
     return (
         <div className="Sidebar">
@@ -25,6 +27,7 @@ function Sidebar( {setSelected2} ) {
                                       setSelected2(index)
                                       if (index === 5) {
                                         window.location.reload(false)
+                                        logOut();
                                       }
                                     }
                             }>

@@ -17,9 +17,28 @@
     grid-template-columns: 12% auto;
 }
 
-.auth-form-container, .login-form, .register-form {
+.auth-form-container, .login-form {
     display: flex;
     flex-direction: column;
+}
+
+.popup{
+    position: fixed;
+    margin-top:2%;
+    margin-left:5%;
+    background-color: rgb(177, 175, 218);
+    border-radius: 6px;
+    text-align: center;
+    color:red;
+}
+
+.popup_login{
+    position: fixed;
+    margin-top:30%;
+    background-color: rgb(177, 175, 218);
+    border-radius: 6px;
+    text-align: center;
+    color:red;
 }
 
 @media screen and (min-width: 600px) {
